@@ -6,6 +6,7 @@ test('tile', function(assert) {
     assert.plan(2);
     var osrm = new OSRM(berlin_path);
     osrm.tile([17603, 10747, 15], function(err, result) {
+        console.log(result.length);
         assert.ifError(err);
         assert.ok(Math.abs(result.length - 35957) < 10);
     });
